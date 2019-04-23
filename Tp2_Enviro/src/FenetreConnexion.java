@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -18,7 +19,7 @@ public class FenetreConnexion extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private JFrame frmGestionDesAlbums;
 	private JTextField textField;
-	private JTextField textField_1;
+	private JPasswordField textField_1;
 
 	/**
 	 * Launch the application.
@@ -102,8 +103,9 @@ public class FenetreConnexion extends JPanel{
 		frmGestionDesAlbums.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
+		textField_1 = new JPasswordField();
 		textField_1.setBounds(183, 109, 96, 20);
+		textField_1.setEchoChar('*');
 		frmGestionDesAlbums.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 	}

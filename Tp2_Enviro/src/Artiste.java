@@ -3,10 +3,15 @@ public class Artiste {
 
 	String id;
 	String nomArtiste;
-	Boolean membre;
+	String membre;
 	String photo;
 	
-	public Artiste(String id, String nomArtiste, Boolean membre, String photo) {
+	
+	public Artiste(){
+		
+	}
+	
+	public Artiste(String id, String nomArtiste, String membre, String photo) {
 	     this.id = id;
 	     this.nomArtiste = nomArtiste;
 	     this.membre = membre;
@@ -22,11 +27,13 @@ public class Artiste {
 		return this.nomArtiste;
 	}
 	
-	public Boolean getMembre() {
+	public String getMembre() {
 		return this.membre;
 	}
 	
 	public String getPhoto() {
 		return this.photo;
 	}
+	
+	
 }

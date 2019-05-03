@@ -1,3 +1,4 @@
+import java.awt.Desktop;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -5,6 +6,9 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.awt.event.ActionEvent;
 
 public class FenetreChoix extends JFrame{
@@ -66,6 +70,11 @@ public class FenetreChoix extends JFrame{
 		frmMenuDeChoix.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Menu Gestion des albums");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FenetreGestionAlbum.main(null);
+			}
+		});
 		btnNewButton_1.setBounds(10, 116, 214, 23);
 		frmMenuDeChoix.getContentPane().add(btnNewButton_1);
 		
@@ -87,5 +96,30 @@ public class FenetreChoix extends JFrame{
 		});
 		btnNewButton_3.setBounds(335, 181, 89, 23);
 		frmMenuDeChoix.getContentPane().add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("Aide en ligne");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == btnNewButton_4){
+					
+					try{
+						File file = Paths.get("src/Aide en ligne.chm").toFile();
+						
+						String absolutePath = file.getAbsolutePath();
+						
+						File fileFicher = new File(absolutePath);
+						
+						Desktop.getDesktop().open(fileFicher);
+					} catch (IOException msg){
+						
+						System.out.println(msg);
+					}
+					
+					
+				}
+			}
+		});
+		btnNewButton_4.setBounds(10, 181, 214, 46);
+		frmMenuDeChoix.getContentPane().add(btnNewButton_4);
 	}
 }

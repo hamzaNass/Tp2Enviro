@@ -20,6 +20,7 @@ public class FenetreConnexion extends JPanel{
 	private JFrame frmGestionDesAlbums;
 	private JTextField textField;
 	private JPasswordField textField_1;
+	Artiste artiste = new Artiste();
 
 	/**
 	 * Launch the application.
@@ -60,6 +61,7 @@ public class FenetreConnexion extends JPanel{
 		
 		JButton btnNewButton = new JButton("Valider");		
 		btnNewButton.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == btnNewButton ) {
 					
@@ -68,7 +70,7 @@ public class FenetreConnexion extends JPanel{
 							FenetreChoix.main(null);
 							
 						} else {
-							JOptionPane.showMessageDialog(null, "Nom ou mots de pass incorecte");
+							JOptionPane.showMessageDialog(null, "Nom ou mot de passe incorrecte");
 						}
 						
 					}

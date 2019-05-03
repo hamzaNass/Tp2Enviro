@@ -41,4 +41,8 @@ public class Album {
 	public String getIdArtiste() {
 		return this.id_artiste;
 	}
+	
+	public String toString() { 
+        return titre + " " + annee;
+     } 
 }
